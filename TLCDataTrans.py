@@ -2,6 +2,8 @@ import csv
 import sys
 import time
 
+# 出租车TLC DataSet提取脚本
+
 # 需要提取的数据行数
 data_count = 1000
 
