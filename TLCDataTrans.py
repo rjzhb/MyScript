@@ -2,13 +2,16 @@ import csv
 import sys
 import time
 
+# 需要提取的数据行数
+data_count = 1000
+
 # 读取csv文件的第一列和第四列
 with open("E:/Projects/DataSet/CSV/fhvhv_tripdata_2022-07.csv", "r") as csvfile:
     reader = csv.reader(csvfile)
     col1 = []
     col4 = []
     for i, row in enumerate(reader):
-        if i >= 1000:
+        if i >= data_count:
             break
         col1.append(row[0])
         col4.append(row[3])

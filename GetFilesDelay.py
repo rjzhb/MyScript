@@ -43,7 +43,7 @@ def print_data_distribution():
     sorted_dict = {k: v for k, v in sorted_items}
 
     # 打开文件
-    with open('my_file.txt', 'w') as f:
+    with open('delay_distribution.txt', 'w') as f:
         # 遍历字典，将每个键值对写入文件
         for key, value in sorted_dict.items():
             f.write(f'{key}:{value}\n')
@@ -55,4 +55,5 @@ for i in range(1, 98):
     for j in range(1, 2):
         merge_delays(i, j)
 
+# 将数据分布输出，方便看出delay的分布集中情况
 print_data_distribution()
