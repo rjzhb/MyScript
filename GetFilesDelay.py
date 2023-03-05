@@ -3,12 +3,12 @@ import csv
 
 def merge_delays(i, j):
     delays = []
-    for k in range(1, 100):
+    for k in range(1, 688):
         filename = "E:/Projects/DataSet/NetLatency-Data/Seattle/SeattleData_%d" % k
         with open(filename, "r") as f:
             lines = f.readlines()
             delay = lines[i].split()[j]
-            delays.append(delay)
+            delays.append(str(float(delay) / 2))
     with open(
         "E:/Projects/DataSet/CSV/delay/delay%d_%d.csv" % (i, j), "w", newline=""
     ) as f:
@@ -17,4 +17,4 @@ def merge_delays(i, j):
         writer.writerows([[delay] for delay in delays])
 
 
-merge_delays(0, 2)
+merge_delays(50, 50)
