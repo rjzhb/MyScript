@@ -1,5 +1,6 @@
 import csv
 
+# 合并key, te, ta三大属性
 
 # 读入带Key, te属性的csv文件
 def read_key_file(name):
