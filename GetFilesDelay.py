@@ -42,6 +42,12 @@ def print_data_distribution():
     # 将排序后的元素转化为字典
     sorted_dict = {k: v for k, v in sorted_items}
 
+    # 打开文件
+    with open('my_file.txt', 'w') as f:
+        # 遍历字典，将每个键值对写入文件
+        for key, value in sorted_dict.items():
+            f.write(f'{key}:{value}\n')
+        
     print(sorted_dict)
 
 
