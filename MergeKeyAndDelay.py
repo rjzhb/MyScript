@@ -2,6 +2,7 @@ import csv
 
 # 合并key, te, ta三大属性
 
+
 # 读入带Key, te属性的csv文件
 def read_key_file(name):
     data = []
@@ -17,7 +18,7 @@ def read_key_file(name):
 # 读入带delay的文件
 def read_delay_file(name):
     data = []
-    with open("E:/Projects/DataSet/CSV/delay/" + name, "r") as csvfile:
+    with open(name, "r") as csvfile:
         reader = csv.reader(csvfile)
         next(reader)
         for row in reader:
@@ -28,12 +29,12 @@ def read_delay_file(name):
 
 # 输出带有三列的csv文件，这三列属性分别是:  key , te,  ta( te + delay)
 keyData = read_key_file("fhvhv_tripdata_output.csv")
-delayData = read_delay_file("delay97_1.csv")
+delayData = read_delay_file("LowDelayData.csv")
 
-with open("TLCDataSet", "w", newline="") as csvfile:
+with open("TLCDataSetLowDelay.csv", "w", newline="") as csvfile:
     writer = csv.writer(csvfile)
     writer.writerow(["key", "te", "ta"])
-    for i in range(len(delayData)):
+    for i in range(len(keyData)):
         writer.writerow(
             [
                 keyData[i][0],

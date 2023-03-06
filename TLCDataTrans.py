@@ -5,7 +5,7 @@ import time
 # 出租车TLC DataSet提取脚本
 
 # 需要提取的数据行数
-data_count = 1000
+data_count = 100000
 
 # 读取csv文件的第一列和第四列
 with open("E:/Projects/DataSet/CSV/fhvhv_tripdata_2022-07.csv", "r") as csvfile:
@@ -39,6 +39,10 @@ with open(
     writer = csv.writer(csvfile)
     for i in range(len(col1)):
         try:
+            if col1[i] == "HV0003":
+                col1[i] = "1"
+            if col1[i] == "HV0005":
+                col1[i] = "2"
             writer.writerow([col1[i], int(new_col4[i]) - min_value])
         except ValueError:
             writer.writerow([col1[i], new_col4[i]])
