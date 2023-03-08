@@ -6,12 +6,10 @@ df = pd.read_csv('GenerateDataSetMidDelay.csv')
 # 计算eventTime列的最小值
 min_val = df['eventTime'].min()
 
-# 计算arrivalTime列的最小值
-min_val_2 = df['arrivalTime'].min()
 
 # 将eventTime列的数据减去最小值
 df['eventTime'] = df['eventTime'] - min_val
-df['arrivalTime'] = df['arrivalTime'] - min_val_2
+df['arrivalTime'] = df['arrivalTime'] - min_val
 
 # 将处理后的数据写回CSV文件
 df.to_csv('GenerateDataSetMidDelay.csv', index=False)
