@@ -3,14 +3,14 @@ import csv
 # 合并key, te, ta三大属性
 
 
-# 读入带Key, te属性的csv文件
+# 读入带Key, value, te属性的csv文件
 def read_key_file(name):
     data = []
     with open("E:/Projects/DataSet/CSV/" + name, "r") as csvfile:
         reader = csv.reader(csvfile)
         next(reader)
         for row in reader:
-            data.append((row[0], row[1]))
+            data.append((row[0], row[1], row[2]))
 
     return data
 
@@ -28,18 +28,18 @@ def read_delay_file(name):
 
 
 # 输出带有三列的csv文件，这三列属性分别是:  key , te,  ta( te + delay)
-keyData = read_key_file("fhvhv_tripdata_output.csv")
+keyData = read_key_file("merged_file1.csv")
 delayData = read_delay_file("MidDelayData.csv")
 
-with open("TLCDataSetMidDelay.csv", "w", newline="") as csvfile:
+with open("GenerateDataSetMidDelay.csv", "w", newline="") as csvfile:
     writer = csv.writer(csvfile)
     writer.writerow(["key", "value", "eventTime", "arrivalTime"])
     for i in range(len(keyData)):
         writer.writerow(
             [
                 keyData[i][0],
-                keyData[i][0],
                 keyData[i][1],
-                float(delayData[i]) * 1000 * 1000 + float(keyData[i][1]),
+                keyData[i][2],
+                float(delayData[i]) * 1000 * 1000 + float(keyData[i][2]),
             ]
         )
