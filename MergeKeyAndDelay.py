@@ -28,7 +28,7 @@ def read_delay_file(name):
 
 
 # 输出带有三列的csv文件，这三列属性分别是:  key , te,  ta( te + delay)
-keyData = read_key_file("merged_file1.csv")
+keyData = read_key_file("shunfeng/action/merge2.csv")
 delayData = read_delay_file("MidDelayData.csv")
 
 with open("GenerateDataSetMidDelay.csv", "w", newline="") as csvfile:
