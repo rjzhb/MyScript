@@ -29,9 +29,9 @@ def read_delay_file(name):
 
 # 输出带有三列的csv文件，这三列属性分别是:  key , te,  ta( te + delay)
 keyData = read_key_file("E:/Projects/DataSet/DataSets/rovio/1000ms_1t.csv")
-delayData = read_delay_file("LowDelayData.csv")
+delayData = read_delay_file("HighDelayData.csv")
 
-with open("E:/Projects/DataSet/DataSets/rovio/1000ms_1tLowDelayData.csv", "w", newline="") as csvfile:
+with open("E:/Projects/DataSet/DataSets/rovio/1000ms_1tHighDelayData.csv", "w", newline="") as csvfile:
     writer = csv.writer(csvfile)
     writer.writerow(["key", "value", "eventTime", "arrivalTime"])
     for i in range(len(keyData)):
