@@ -6,7 +6,7 @@ import csv
 # 读入带Key, value, te属性的csv文件
 def read_key_file(name):
     data = []
-    with open("E:/Projects/DataSet/CSV/" + name, "r") as csvfile:
+    with open(name, "r") as csvfile:
         reader = csv.reader(csvfile)
         next(reader)
         for row in reader:
@@ -28,10 +28,10 @@ def read_delay_file(name):
 
 
 # 输出带有三列的csv文件，这三列属性分别是:  key , te,  ta( te + delay)
-keyData = read_key_file("shunfeng/action/merge2.csv")
-delayData = read_delay_file("MidDelayData.csv")
+keyData = read_key_file("E:/Projects/DataSet/DataSets/rovio/1000ms_1t.csv")
+delayData = read_delay_file("LowDelayData.csv")
 
-with open("GenerateDataSetMidDelay.csv", "w", newline="") as csvfile:
+with open("E:/Projects/DataSet/DataSets/rovio/1000ms_1tLowDelayData.csv", "w", newline="") as csvfile:
     writer = csv.writer(csvfile)
     writer.writerow(["key", "value", "eventTime", "arrivalTime"])
     for i in range(len(keyData)):
