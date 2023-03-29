@@ -18,6 +18,7 @@ def read_key_file(name):
     return data
 
 
+
 # 读入带delay的文件
 def read_delay_file(name):
     data = []
