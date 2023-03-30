@@ -30,7 +30,6 @@ def read_delay_file(name):
 
     return data
 
-
 # 输出带有三列的csv文件，这三列属性分别是:  key , te,  ta( te + delay)
 keyData = read_key_file("E:/Projects/DataSet/DataSets/stock/sb_1000ms_1t.csv")
 delayData = read_delay_file("zipf_distribution_1000.csv")
