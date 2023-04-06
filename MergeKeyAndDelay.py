@@ -34,6 +34,7 @@ def read_delay_file(name):
 keyData = read_key_file("E:/Projects/DataSet/DataSets/stock/sb_1000ms_1t.csv")
 delayData = read_delay_file("zipf_distribution_1000.csv")
 
+
 with open(
     "E:/Projects/DataSet/DataSets/stock/sb_1000ms_1tZipf_1000.csv", "w", newline=""
 ) as csvfile:
