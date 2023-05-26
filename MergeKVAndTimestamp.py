@@ -1,6 +1,6 @@
 import csv
 
-with open("E:/Projects/DataSet/CSV/shunfeng/action/2.csv", "r") as file1, open("timestamps.csv", "r") as file2, open("E:/Projects/DataSet/CSV/shunfeng/action/merge2.csv", "w", newline="") as merged_file:
+with open("E:/Projects/DataSet/CSV/shunfeng/action/2.csv", "r") as file1, open("eventTime.csv", "r") as file2, open("E:/Projects/DataSet/CSV/shunfeng/action/merge2.csv", "w", newline="") as merged_file:
     reader1 = csv.reader(file1)
     reader2 = csv.reader(file2)
     writer = csv.writer(merged_file)
